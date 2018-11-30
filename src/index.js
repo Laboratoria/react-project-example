@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
 import { IntlProvider } from 'react-intl';
 import { MuiThemeProvider } from '@material-ui/core/styles';
 import { Theme } from 'laboratoria-ui';
@@ -7,13 +8,16 @@ import { Theme } from 'laboratoria-ui';
 import App from './App';
 import { language, messages } from './config/intl';
 import * as serviceWorker from './serviceWorker';
+import store from './store';
 
 ReactDOM.render(
-  <IntlProvider locale={language} messages={messages}>
-    <MuiThemeProvider theme={Theme}>
-      <App />
-    </MuiThemeProvider>
-  </IntlProvider>,
+  <Provider store={store}>
+    <IntlProvider locale={language} messages={messages}>
+      <MuiThemeProvider theme={Theme}>
+        <App />
+      </MuiThemeProvider>
+    </IntlProvider>
+  </Provider>,
   document.getElementById('root')
 );
 

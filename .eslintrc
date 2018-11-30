@@ -17,6 +17,7 @@
     "import/newline-after-import": "error"
   },
   "globals": {
+    "fetch": true,
     "window": true,
     "document": true,
     "localStorage": true,

@@ -1,11 +1,14 @@
 export default {
   en: {
-    'hello.world': 'Hello world'
+    'hello.world': 'Hello world',
+    'load.gifs': 'Load Gifs'
   },
   'pt-BR': {
-    'hello.world': 'Oi mundo'
+    'hello.world': 'Oi mundo',
+    'load.gifs': 'Carregar Gifs'
   },
   es: {
-    'hello.world': 'Hola mundo'
+    'hello.world': 'Hola mundo',
+    'load.gifs': 'Cargar Gifs'
   }
 };
