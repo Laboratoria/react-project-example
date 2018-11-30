@@ -14,3 +14,15 @@ React project base
 * Material-ui and Laboratoria-ui
 * Husky - Git Hooks
 * Fetch - HTTP Request
+
+## Install
+
+```shell
+yarn
+```
+
+## Run
+
+```shell
+yarn start
+```
