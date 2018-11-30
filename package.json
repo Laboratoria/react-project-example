@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@material-ui/core": "^3.6.0",
     "eslint": "^5.9.0",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-config-prettier": "^3.3.0",
@@ -11,6 +12,7 @@
     "eslint-plugin-prettier": "^3.0.0",
     "eslint-plugin-react": "^7.11.1",
     "husky": "^1.2.0",
+    "laboratoria-ui": "https://github.com/Laboratoria/ui.git",
     "lint-staged": "^8.1.0",
     "prettier": "^1.15.3",
     "pretty-quick": "^1.8.0",
