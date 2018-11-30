@@ -24,9 +24,13 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "precommit": "NODE_ENV=production lint-staged"
+    "eject": "react-scripts eject"
   },
+  "husky": {
+    "hooks": {
+        "pre-commit": "NODE_ENV=production lint-staged"
+    }
+},
   "lint-staged": {
     "*.{js,jsx}": [
       "pretty-quick --staged",
