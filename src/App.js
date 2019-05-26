@@ -6,7 +6,7 @@ import withStyles from '@material-ui/core/styles/withStyles';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
-import fechGifsFrontServer from './actions';
+import fetchGifsFromServer from './actions';
 import Gifs from './components/Gifs';
 import logo from './images/logo.svg';
 
@@ -41,7 +41,7 @@ const App = ({ classes, dispatch, gifs }) => (
       <Button
         variant="contained"
         color="primary"
-        onClick={() => dispatch(fechGifsFrontServer)}
+        onClick={() => dispatch(fetchGifsFromServer)}
       >
         <FormattedMessage id="load.gifs" />
       </Button>

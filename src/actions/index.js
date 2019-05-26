@@ -6,10 +6,10 @@ const fillGifsList = value => ({
   gifs: value
 });
 
-const fechGifsFrontServer = async dispatch => {
+const fetchGifsFromServer = async dispatch => {
   const res = await Api.get();
   const json = await res.json();
   dispatch(fillGifsList(json.data));
 };
 
-export default fechGifsFrontServer;
+export default fetchGifsFromServer;
