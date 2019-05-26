@@ -1,3 +1,6 @@
 export default {
-  gifs: {}
+  page: {
+    gifs: {},
+    favorite: {}
+  }
 };

@@ -6,7 +6,7 @@ import withStyles from '@material-ui/core/styles/withStyles';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
-import fetchGifsFromServer from './actions';
+import { fetchGifsFromServer } from './actions/fetchGifsFromServer';
 import Gifs from './components/Gifs';
 import logo from './images/logo.svg';
 
@@ -44,6 +44,12 @@ const App = ({ classes, dispatch, gifs }) => (
         onClick={() => dispatch(fetchGifsFromServer)}
       >
         <FormattedMessage id="load.gifs" />
+      </Button>
+    </Grid>
+
+    <Grid item xs={12} className={classes.button}>
+      <Button variant="outlined" color="primary">
+        <FormattedMessage id="fave.gifs" />
       </Button>
     </Grid>
 

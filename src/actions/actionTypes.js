@@ -1,1 +1,2 @@
-export default 'LOAD_GIFS';
+export const LOAD_GIFS = 'LOAD_GIFS';
+export const ADD_GIF_TO_FAVORITES = 'ADD_GIF_TO_FAVORITES';
