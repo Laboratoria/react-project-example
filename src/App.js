@@ -9,6 +9,7 @@ import Button from '@material-ui/core/Button';
 import { fetchGifsFromServer } from './actions/fetchGifsFromServer';
 import Gifs from './components/Gifs';
 import logo from './images/logo.svg';
+import { addGifToFavorites } from './actions/addGifToFavorites';
 
 const styles = theme => ({
   root: {
@@ -26,7 +27,7 @@ const styles = theme => ({
   }
 });
 
-const App = ({ classes, dispatch, gifs }) => (
+const App = ({ classes, fetchGifs, gifs, favoriteGif }) => (
   <Grid container justify="center" className={classes.root}>
     <Grid item xs={12} className={classes.logo}>
       <img src={logo} alt="Laboratoria" />
@@ -38,11 +39,7 @@ const App = ({ classes, dispatch, gifs }) => (
     </Grid>
 
     <Grid item xs={12} className={classes.button}>
-      <Button
-        variant="contained"
-        color="primary"
-        onClick={() => dispatch(fetchGifsFromServer)}
-      >
+      <Button variant="contained" color="primary" onClick={fetchGifs}>
         <FormattedMessage id="load.gifs" />
       </Button>
     </Grid>
@@ -54,16 +51,25 @@ const App = ({ classes, dispatch, gifs }) => (
     </Grid>
 
     <Grid item xs={12}>
-      <Gifs data={gifs} />
+      <Gifs data={gifs} favoriteGif={favoriteGif} />
     </Grid>
   </Grid>
 );
 
 const mapStateToProps = state => ({
-  gifs: state.gifs
+  gifs: state.gifs,
+  favorite: state.favorite
+});
+
+const mapDispatchToProps = dispatch => ({
+  fetchGifs: () => dispatch(fetchGifsFromServer),
+  favoriteGif: gif => dispatch(addGifToFavorites(gif))
 });
 
 export default compose(
   withStyles(styles),
-  connect(mapStateToProps)
+  connect(
+    mapStateToProps,
+    mapDispatchToProps
+  )
 )(App);

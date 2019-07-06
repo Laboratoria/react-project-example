@@ -24,7 +24,7 @@ const styles = theme => ({
   }
 });
 /* eslint-disable */
-const Gifs = ({ classes, data, dispatch }) => (
+const Gifs = ({ classes, data, favoriteGif }) => (
   <div className={classes.root}>
     <GridList cellHeight={160} className={classes.gridList} cols={3}>
       {data.length > 0 &&
@@ -34,7 +34,7 @@ const Gifs = ({ classes, data, dispatch }) => (
               <img
                 src={gif.images.downsized_medium.url}
                 alt={gif.title}
-                onClick={() => dispatch(addGifToFavorites(gif))}
+                onClick={() => favoriteGif}
               />
             </GridListTile>
           </Tooltip>
@@ -44,10 +44,18 @@ const Gifs = ({ classes, data, dispatch }) => (
 );
 /* eslint-enable */
 const mapStateToProps = state => ({
-  favorite: state.favorite
+  data: state.gifs,
+  favorites: state.favorites
+});
+
+const mapDispatchToProps = dispatch => ({
+  favoriteGif: gif => dispatch(addGifToFavorites(gif))
 });
 
 export default compose(
   withStyles(styles),
-  connect(mapStateToProps)
+  connect(
+    mapStateToProps,
+    mapDispatchToProps
+  )
 )(Gifs);

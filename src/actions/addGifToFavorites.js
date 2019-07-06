@@ -1,11 +1,13 @@
 import { ADD_GIF_TO_FAVORITES } from './actionTypes';
 
-const addSingleGif = value => ({
+const addGif = value => ({
   type: ADD_GIF_TO_FAVORITES,
   favorite: value
 });
 
-const addGifToFavorites = dispatch => dispatch(addSingleGif());
+const sendToStore = selectedGif => dispatch => {
+  dispatch(addGif(selectedGif));
+};
 
 // eslint-disable-next-line import/prefer-default-export
-export { addGifToFavorites };
+export { sendToStore as addGifToFavorites };

@@ -3,7 +3,7 @@ import Api from '../api';
 
 const fillGifsList = value => ({
   type: LOAD_GIFS,
-  page: { gifs: value }
+  gifs: value
 });
 
 const fetchGifsFromServer = async dispatch => {
