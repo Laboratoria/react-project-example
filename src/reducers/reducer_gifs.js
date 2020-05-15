@@ -1,11 +1,15 @@
-import LOAD_GIFS from '../actions/actionTypes';
+import { LOAD_GIFS } from '../actions/actionTypes';
+import { initialState } from '../store/initialState';
 
-export default (state = [], action) => {
+const reducerGifs = (state = initialState, action) => {
   switch (action.type) {
     case LOAD_GIFS:
-      return action.gifs;
+      return { ...state, gifs: action.gifs };
 
     default:
       return state;
   }
 };
+
+// eslint-disable-next-line import/prefer-default-export
+export { reducerGifs };
